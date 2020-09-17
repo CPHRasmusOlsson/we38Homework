@@ -11,4 +11,8 @@ class Student {
     isFemale = tmpIsFemale;
     datamatikerTeam = tmpDatamatikerTeam;
   }
+
+  String getName() {
+    return name;
+  }
 }

@@ -1,9 +1,29 @@
-void setup(){
-  Teacher myTeacher = new Teacher("Jesper",31,false);
-  Student me = new Student("Rasmus",23,false,"1.b");
-  Student fakeStudent = new Student("Bob",25,false,"1.b");
-  
-  println(myTeacher.name);
-  println("Our names are "+me.name+" and " +fakeStudent.name+" we both go in datamatiker team: "+me.datamatikerTeam);
-  
+Student[] students = new Student[10];
+String[] names = {"Rasmus", "Peter", "Lucas", "Jesper", "Thomas", "Mathias", "Sebastian", "Jonas", "Knud", "Hemming"};
+
+void setup() {
+
+  for (int i = 0; i<students.length; i++) {
+    students[i] = new Student(names[i], 23, false, "1.b");
+  }
+
+  printName(students, 3);
+  printName(students, 0);
+  printName(students, 6);
+
+  printIndex(students, "Peter");
+  printIndex(students, "Knud");
+  printIndex(students, "Mathias");
+}
+
+void printName(Student[] arr, int index) {
+  println(arr[index].getName());
+}
+
+void printIndex(Student[] arr, String name) {
+  for (int i = 0; i<arr.length; i++) {
+    if (arr[i].getName()==name) {
+      println(i);
+    }
+  }
 }
